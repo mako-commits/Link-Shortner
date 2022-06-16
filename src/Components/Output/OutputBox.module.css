@@ -1,0 +1,26 @@
+.result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1 rem;
+}
+
+.result p {
+  color: #fff;
+  border: 1px solid blue;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+}
+
+.result button {
+  padding: 0.5rem 1rem;
+  color: #fff;
+  cursor: pointer;
+  background: green;
+  border: none;
+}
+
+.result .copied {
+  background: red;
+  color: blue;
+}
