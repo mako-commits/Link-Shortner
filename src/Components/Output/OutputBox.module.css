@@ -7,20 +7,26 @@
 
 .result p {
   color: #fff;
-  border: 1px solid blue;
+  border: 1px solid var(--primary-color);
+  border-right: none;
   padding: 0.5rem 1rem;
-  margin-right: 1rem;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  font-family: var(--font);
 }
 
 .result button {
-  padding: 0.5rem 1rem;
-  color: #fff;
+  padding: 0.68rem 1rem;
+  color: var(--text-color);
   cursor: pointer;
-  background: green;
+  background: var(--white);
   border: none;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  font-family: var(--font);
 }
 
 .result .copied {
-  background: red;
-  color: blue;
+  background: #036b50;
+  color: var(--white);
 }

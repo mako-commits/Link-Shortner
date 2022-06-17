@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
 import styles from "./OutputBox.module.css";
 const OutputBox = ({ inputValue }) => {
-  //   console.log(inputUrl);
   const [shortenLink, setShortenLink] = useState("");
   const [copied, setCopied] = useState(false);
   const [text, setText] = useState("Copied");
@@ -31,14 +30,18 @@ const OutputBox = ({ inputValue }) => {
       setLoading(false);
     }
   }
-
+  const validUrl = (url) => {
+    let regexp =
+      /^(?:(?:https?|ftp):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/;
+    return regexp.test(url);
+  };
   useEffect(() => {
-    if (inputValue.length) {
+    if (validUrl(inputValue)) {
       fetchData(inputValue).then((data) => {
-        console.log(data.link);
+        // console.log(data.link);
         setShortenLink(data.link);
       });
-    }
+    } else alert("Invalid URL: " + inputValue);
   }, [inputValue]);
 
   useEffect(() => {

@@ -1,12 +1,12 @@
 .inputContainer h1 {
   font-size: 3.5rem;
 }
-.inputContainer form {
+.inputContainer {
   display: flex;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
 }
 .inputContainer input {
-  width: 100%;
+  width: 50vw;
   padding: 0.5rem 0.2rem 0.5rem 0;
   text-indent: 1rem;
   border: none;
@@ -14,11 +14,12 @@
   font-size: 1rem;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
-  background: #fff;
+  background: var(--white);
 }
 
 .inputContainer input::placeholder {
   font-size: 0.9rem;
+  font-family: var(--font);
 }
 
 .inputContainer button {
@@ -29,8 +30,16 @@
   font-weight: bold;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
-  color: #fff;
-  background-color: green;
+  color: var(--white);
+  background-color: var(--primary-color);
   border: none;
   cursor: pointer;
+  font-family: var(--font);
+  font-weight: 400;
+}
+
+.inputContainer button:hover {
+  background: transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
 }
