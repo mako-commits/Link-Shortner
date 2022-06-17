@@ -14,13 +14,12 @@ const OutputBox = ({ inputValue }) => {
       const res = await fetch("https://api-ssl.bitly.com/v4/shorten", {
         method: "POST",
         headers: {
-          Authorization: "Bearer 874b760c3976361f07dc368254802eceee527d1a",
+          Authorization: `Bearer ${process.env.REACT_APP_TOKEN}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
           long_url: `${url}`,
-          // domain: "bit.ly",
-          // group_guid: "Ba1bc23dE4F",
+          domain: "bit.ly",
         }),
       });
       return res.json();
