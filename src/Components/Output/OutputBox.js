@@ -40,7 +40,7 @@ const OutputBox = ({ inputValue }) => {
         // console.log(data.link);
         setShortenLink(data.link);
       });
-    } else alert("Invalid URL: " + inputValue);
+    } else alert("Invalid URL : " + inputValue);
   }, [inputValue]);
 
   useEffect(() => {
